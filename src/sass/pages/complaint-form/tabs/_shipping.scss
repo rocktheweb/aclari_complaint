@@ -1,0 +1,23 @@
+fieldset#fieldset-shipping-methods {
+    margin-bottom: 3.125rem;
+}
+
+.shipping-method {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.875rem;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
+    &__logo {
+        flex:0 0 110px;
+        max-width:110px;
+        text-align: center;
+        margin-right:20px;
+        img {
+            max-height:78px;
+            max-width:100px;
+        }
+    }
+}

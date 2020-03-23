@@ -1,0 +1,93 @@
+@import '../../vendors/abstracts/variables';
+@import "~bootstrap/scss/bootstrap-reboot";
+
+// @import 'base/global';
+@import '../../vendors/base/type';
+@import '../../vendors/base/images';
+
+@import '../../vendors/components/buttons';
+@import '../../vendors/components/card';
+
+@import '../../vendors/layouts/grid';
+@import '../../vendors/layouts/section';
+
+#complaints-page-wrapper {
+    padding: 6.25rem 0;
+    .intro {
+        margin-bottom: 3.75rem;
+        @include media-breakpoint-up(lg) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4.375rem;
+        }
+        &__img {
+            text-align: center;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 1.875rem;
+            }
+        }
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            font-size:1.125rem;
+            @include media-breakpoint-up(lg) {
+                font-size:1.25rem;
+            }
+            h1 {
+                font-size:1.5rem;
+                margin-bottom: 1.875rem;
+            }
+            p {
+                margin-bottom: 1.875rem;
+                &:not(:first-of-type) {
+                    color:$gray-600;
+                }
+                @include media-breakpoint-up(lg) {
+
+                }
+            }
+            .btn {
+                font-family:$headings-font-family;
+                font-size:1.2em;
+                padding: .875em 2.5em;
+            }
+        }
+    }
+    
+    
+    .how-it-works {
+        margin-bottom: 3.75rem;
+        .section__heading {
+            text-align: center;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap:1.875rem;
+        }
+    }
+    
+    .info {
+        font-family: $headings-font-family;
+        font-size:1.125rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3.125rem;
+        min-height: 320px;
+        background-color:$primary;
+        @include media-breakpoint-up(lg) {
+            font-size:1.25rem;
+        }
+        &__inner {
+            max-width:630px;
+            p:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}

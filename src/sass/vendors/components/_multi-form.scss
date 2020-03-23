@@ -1,0 +1,153 @@
+.multiform-nav {
+    padding-left:0;
+    list-style:none;
+    counter-reset: step;
+    // &__item {
+    //     margin-bottom:30px;
+    //     &:first-child .text-wrapper::before {
+    //         background-image:url('../../img/decoration.svg');
+    //     }
+    //     &:nth-child(2) .text-wrapper::before {
+    //         background-image:url('../../img/decoration.svg');
+    //     }
+    //     &:nth-child(3) .text-wrapper::before {
+    //         background-image:url('../../img/decoration.svg');
+    //     }
+    // }
+    // &__item .text-wrapper {
+    //     display:flex;
+    //     flex-flow:row wrap;
+    //     align-items: center;
+    //     &::before {
+    //         content:'';
+    //         display:block;
+    //         width:47px;
+    //         height:45px;
+    //         margin-right:20px;
+    //         margin-bottom:5px;
+    //         background-position:center center;
+    //         background-repeat:no-repeat;
+    //         background-size:contain;
+    //     }
+    //     > .text {
+    //         font-size:14px;
+    //         margin-bottom:5px;
+    //     }
+    //     > .text h2 {
+    //         margin-bottom:5px;
+    //     }
+    // }
+    &__item {
+        background-color:$white;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 1.875rem;
+        }
+        .collapse, .collapsing {
+            > * {
+                padding-left: 1.875rem;
+                padding-right: 1.875rem;
+                &:first-child {
+                    padding-top: 1.875rem;
+                }
+                &:last-child {
+                    padding-bottom: 1.875rem;
+                }
+            }
+        }
+    }
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-family: $headings-font-family;
+        font-size:1.25rem;
+        color:$body-color;
+        line-height: 1.3333;
+        padding:30px 20px 30px 100px;
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-top-color: #fff;
+        background-color: #fff;
+        transition:border-top-color .3s ease;
+        cursor: pointer;
+        &::before {
+            counter-increment: step;
+            content:counter(step);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top:0;
+            left:30px;
+            bottom:0;
+            width:40px;
+            background:center / 40px 40px no-repeat;
+            background-image:url('../../../img/decoration.svg');
+        }
+        @include hover {
+            color: $body-color;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .multiform-nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap:15px;
+        &__link {
+            height:100%;
+            z-index: 1;
+            &.active {
+                border-top-color:#000;
+                &::after {
+                    transform: translateY(15px);
+                } 
+            }
+            &::after {
+                content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+                transition: transform .3s ease;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+
+.multiform-content {
+    background-color:$white;
+    padding: 2.5rem 3.125rem 6.25rem;
+    @include media-breakpoint-up(xl) {
+        padding: 2.5rem 5rem 6.25rem;
+    }
+}
+
+.multiform-prev-next {
+    text-align: right;
+    .btn {
+        min-width: 100px;
+        &:focus {
+            outline: 0;
+            box-shadow:none;
+        }
+    }
+}
+
+.multiform-modal {
+    .modal-body {
+        &__row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+    }
+}
+// .multiform-tab {
+//     padding: 1.875rem;
+// }

@@ -1,0 +1,359 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+</head>
+<body>
+    <main class="site-main" id="complaint-form-page-wrapper"> 
+        <div class="container">
+            <div class="multiform">
+                <form action="" id="complaint-form">
+                    <nav class="multiform-navbar">
+                        <ul class="multiform-nav nav nav-tabs" role="tablist">
+                            <li class="multiform-nav__item">
+                                <a class="multiform-nav__link" id="purchase-type-tab" role="button" data-toggle="collapse" data-target="#purchase-type" aria-controls="purchase-type" aria-expanded="true">Miejsce zakupu</a>
+                                <div class="multiform-tab collapse show" id="purchase-type" aria-labelledby="purchase-type-tab" data-parent="#complaint-form">
+                                    <fieldset id="fieldset-type" class="fieldset">
+                                        <div class="fieldset__header">
+                                            <legend class="fieldset__title">Wybierz miejsce:</legend>
+                                            <p class="fieldset__info">Określ gdzie został kupiony produkt</p>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="orderresize-item-shop_type-1" name="orderresize[item][shop_type]" class="custom-control-input" value="online" checked>
+                                            <label class="custom-control-label" for="orderresize-item-shop_type-1"><h4>Sklep internetowy</h4>Wybierz tę opcję, jeżeli zamówiłaś/-łeś produkt w sklepie on-line</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="orderresize-item-shop_type-2" name="orderresize[item][shop_type]" class="custom-control-input" value="local">
+                                            <label class="custom-control-label" for="orderresize-item-shop_type-2"><h4>Salon ACLARI</h4>Wybierz tę opcję, jeżeli zakupiłaś/-łeś produkt w Salonie ACLARI</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                            <li class="multiform-nav__item">
+                                <a class="multiform-nav__link collapsed" id="complaint-tab" role="button" data-toggle="collapse" data-target="#complaint" aria-controls="complaint" aria-expanded="false">Reklamacja</a>
+                                <div class="multiform-tab collapse" id="complaint" aria-labelledby="complaint-tab" data-parent="#complaint-form">
+                                    <div class="tab-pane__inner">
+                                        <fieldset id="fieldset-details" class="fieldset">
+                                            <div class="fieldset__header">
+                                                <legend class="fieldset__title">Dane Twojego zamówienia:</legend>
+                                                <p class="fieldset__info">Podaj numer zamówienia oraz adres e-mail w celu weryfikacji</p>
+                                            </div>
+                                            <div class="form-group form-row" data-filter="online">
+                                                <label for="orderresize-item-nr_zam" class="col">Nr zamówienia*</label>
+                                                <div class="col">
+                                                    <input type="text" name="orderresize[item][nr_zam]" id="orderresize-item-nr_zam" class="form-control" placeholder="Wpisz numer zamówienia">
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-row" data-filter="online">
+                                                <label for="orderresize-item-contact_email" class="col">Adres e-mail*</label>
+                                                <div class="col">
+                                                    <input type="text" name="orderresize[item][contact_email]" id="orderresize-item-contact_email" class="form-control" placeholder="Wpisz swój adres e-mail">
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-row hide" data-filter="local">
+                                                <label for="orderresize-item-product_code" class="col">ID produktu*</label>
+                                                <div class="col">
+                                                    <input type="text" name="orderresize[item][product_code]" id="orderresize-item-product_code" class="form-control" placeholder="Podaj ID produktu">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" data-filter="online">
+                                                <a href="" id="search-order" class="btn btn-primary">Wyszukaj zamówienie</a>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset id="fieldset-description" class="fieldset">
+                                            <div class="fieldset__header">
+                                                <legend class="fieldset__title">Opis reklamacji:</legend>
+                                                <p class="fieldset__info">Opisz rodzaj usterki oraz okoliczności jej powstania</p>
+                                            </div>
+                                            <div class="form-group form-row" data-filter="online">
+                                                <label for="orderresize-item-order_item_id" class="col">Produkt</label>
+                                                <div class="col">
+                                                    <select class="form-control" name="orderresize[item][order_item_id]" id="orderresize-item-order_item_id">
+                                                        <option>Wybierz produkt</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-row">
+                                                <label for="orderresize-item-komentarz" class="col">Opis*</label>
+                                                <div class="col">
+                                                    <textarea class="form-control" id="orderresize-item-komentarz" rows="3" placeholder="Opisz reklamację"></textarea>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="multiform-nav__item">
+                                <a class="multiform-nav__link collapsed" id="address-tab" role="button" data-toggle="collapse" data-target="#address"  aria-controls="address" aria-expanded="false">Adres odbioru</a>
+                                <div class="multiform-tab collapse" id="address" aria-labelledby="address-tab" data-parent="#complaint-form">
+                                    <fieldset id="fieldset-address" class="fieldset">
+                                        <div class="fieldset__header">
+                                            <legend class="fieldset__title">Wpisz adres odbioru:</legend>
+                                            <p class="fieldset__info">Podaj adres, z którego kurier odbierze od Ciebie produkt do reklamacji</p>
+                                        </div>
+                                        <div class="fieldset__row">
+                                            <div class="fieldset__col">
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Kraj*</label>
+                                                    <div class="col">
+                                                        <select class="form-control" id="">
+                                                            <option>Austria</option>
+                                                            <option>Belgia</option>
+                                                            <option>Hiszpania</option>
+                                                            <option>Niemcy</option>
+                                                            <option selected>Polska</option>
+                                                            <option>Wielka Brytania</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Nazwa firmy*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz nazwę firmy">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Imię i nazwisko:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control is-invalid" placeholder="Wpisz swoje dane">
+                                                        <div class="invalid-feedback">
+                                                            Pole jest wymagane
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Ulica:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz ulicę">
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Numer">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Kod pocztowy:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz kod pocztowy">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Miejscowość:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz miasto">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fieldset__col">
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Numer telefonu:*</label>
+                                                    <div class="col">
+                                                        <input type="tel" name="" id="" class="form-control" placeholder="Wpisz swój numer telefonu">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Adres e-mail:*</label>
+                                                    <div class="col">
+                                                        <input type="email" name="" id="" class="form-control" placeholder="Wpisz swój adres e-mail">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Komentarz:</label>
+                                                    <div class="col">
+                                                        <textarea class="form-control" rows="5" placeholder="Tutaj wpisz treść komentarza"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                            <li class="multiform-nav__item">
+                                <a class="multiform-nav__link collapsed" id="shipping-tab" role="button" data-toggle="collapse" data-target="#shipping" aria-controls="shipping" aria-expanded="false">Sposób dostawy</a>
+                                <div class="multiform-tab collapse" id="shipping" aria-labelledby="shipping-tab" data-parent="#complaint-form">
+                                    <fieldset id="fieldset-shipping-methods" class="fieldset">
+                                        <div class="fieldset__header">
+                                            <legend class="fieldset__title">Wybierz rodzaj dostawy:</legend>
+                                            <p class="fieldset__info">Wybierz sposób, w jaki odeślemy do Ciebie reklamowany produkt</p>
+                                        </div>
+                                        <div class="fieldset__row">
+                                            <div class="shipping-method">
+                                                <div class="shipping-method__logo">
+                                                    <img src="<%=require('../img/ups-logo.png')%>" alt="">
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="orderresize-item-delivery_type-1" name="orderresize[item][delivery_type]" class="custom-control-input" value="1" checked>
+                                                    <label class="custom-control-label" for="orderresize-item-delivery_type-1">
+                                                        Przesyłka kurierska UPS<br>
+                                                        <span class="text-muted">Dostawa zostanie zrealizowana
+                                                            przez firmę kurierską UPS.
+                                                            Koszt wysyłki 0 zł</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="shipping-method">
+                                                <div class="shipping-method__logo">
+                                                    <img src="<%=require('../img/aclari-logo.svg')%>" alt="">
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="orderresize-item-delivery_type-3" name="orderresize[item][delivery_type]" class="custom-control-input" value="3">
+                                                    <label class="custom-control-label" for="orderresize-item-delivery_type-3">
+                                                        Odbiór osobisty<br>
+                                                        <span class="text-muted">Produkt zostanie dostarczony
+                                                            do wybranego przez Ciebie salonu ACLARI
+                                                            Koszt wysyłki 0 zł</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset id="fieldset-shipping-method-ups" class="fieldset" data-shipping-method="1">
+                                        <div class="fieldset__row">
+                                            <div class="fieldset__col">
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Kraj*</label>
+                                                    <div class="col">
+                                                        <select class="form-control" id="">
+                                                            <option>Austria</option>
+                                                            <option>Belgia</option>
+                                                            <option>Hiszpania</option>
+                                                            <option>Niemcy</option>
+                                                            <option selected>Polska</option>
+                                                            <option>Wielka Brytania</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Nazwa firmy*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz nazwę firmy">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Imię i nazwisko:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz swoje dane">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Ulica:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz ulicę">
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Numer">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Kod pocztowy:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz kod pocztowy">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Miejscowość:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz miasto">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fieldset__col">
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Numer telefonu:*</label>
+                                                    <div class="col">
+                                                        <input type="tel" name="" id="" class="form-control" placeholder="Wpisz swój numer telefonu">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Adres e-mail:*</label>
+                                                    <div class="col">
+                                                        <input type="email" name="" id="" class="form-control" placeholder="Wpisz swój adres e-mail">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Komentarz:</label>
+                                                    <div class="col">
+                                                        <textarea class="form-control" rows="5" placeholder="Tutaj wpisz treść komentarza"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset id="fieldset-shipping-method-local-pickup" class="fieldset hide" data-shipping-method="3">
+                                        <div class="fieldset__header">
+                                            <legend class="fieldset__title">Wybór Salonu ACLARI:</legend>
+                                            <p class="fieldset__info">Wybierz Salon ACLARI, do którego zostanie dostarczona przesyłka. Podaj dane osoby odbierającej pierścionek.</p>
+                                        </div>
+                                        <div class="fieldset__row">
+                                            <div class="fieldset__col">
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Imię i nazwisko:*</label>
+                                                    <div class="col">
+                                                        <input type="text" name="" id="" class="form-control" placeholder="Wpisz swoje dane">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Numer telefonu:*</label>
+                                                    <div class="col">
+                                                        <input type="tel" name="" id="" class="form-control" placeholder="Wpisz swój numer telefonu">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-row">
+                                                    <label for="" class="col">Salon Aclari:*</label>
+                                                    <div class="col">
+                                                        <select class="form-control" id="">
+                                                            <option>Poznań, ul. Półwiejska 42 lok. 346</option>
+                                                            <option>Kraków, ul. Starowiślna 19</option>
+                                                            <option>Sopot, ul. Grunwaldzka 44</option>
+                                                            <option>Katowice, ul. Uniwersytecka 13</option>
+                                                            <option>Wrocław, ul. Czysta 4</option>
+                                                            <option>Warszawa, ul. Koszykowa 63</option>
+                                                            <option>Olsztyn, ul. Mickiewicza 9/20</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav> 
+                </form>
+                <div class="multiform-prev-next">
+                    <button id="multiform-prev-btn" class="btn btn-secondary">Wróć</button>
+                    <button id="multiform-next-btn" class="btn btn-primary">Dalej</button>
+                </div>
+                <!-- Thank You Modal -->
+                <div class="multiform-modal modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body__row">
+                                <div class="modal-body__col">
+                                    <img src="<%=require('../img/modal-img.png')%>" alt="">
+                                </div>
+                                <div class="modal-body__col">
+                                    <h4>Proces złożenia reklamacji przebiegł pomyślnie!</h4>
+                                    <p>Potwierdzenie przyjęcia reklamacji wysłaliśmy na Twojego maila</p>
+                                    <a href="#" class="btn btn-primary">Wróć do sklepu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

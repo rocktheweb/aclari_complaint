@@ -1,0 +1,73 @@
+@import '../../vendors/abstracts/variables';
+@import "~bootstrap/scss/bootstrap-reboot";
+
+// @import "~bootstrap/scss/nav";
+
+$container-max-widths: (
+  xl: 1200px
+);
+
+@import '../../vendors/base/type';
+@import '../../vendors/base/images';
+@import '../../vendors/base/transitions';
+
+// @import 'components/radio';
+@import '../../vendors/components/forms';
+@import '../../vendors/components/buttons';
+@import '../../vendors/components/custom-form';
+@import '../../vendors/components/tabs';
+@import '../../vendors/components/close';
+@import '../../vendors/components/modal';
+@import '../../vendors/components/multi-form';
+
+@import '../../vendors/layouts/grid';
+
+@import '../../vendors/utilities/display';
+@import '../../vendors/utilities/text';
+
+@import 'tabs/purchase-type';
+@import 'tabs/details';
+@import 'tabs/shipping';
+
+
+#complaint-form-page-wrapper {
+    font-size:.875rem;
+    background-color:#F5F7F7;
+    padding: 200px 0;
+}
+
+form#complaint-form .form-row { 
+    > .col {
+        flex:0 0 100%;
+        max-width: 100%;
+    }
+    @include media-breakpoint-down(xs) {
+        > .col:not(label) + .col:not(label) {
+            margin-top: .5rem; 
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        > label.col {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+            text-align: right;
+            padding-top: 15px;
+            margin-bottom: 0;
+        }
+        > .col:not(label) {
+            flex:2;
+        }
+        > .col:not(label) + .col:not(label) {
+            flex: 1; 
+        }
+    }
+}
+
+form#complaint-form .tab-pane__inner {
+    display: grid;
+    gap:1.875rem 3.125rem;
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
